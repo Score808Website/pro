@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Score808</title>
+    <style> /* CSS */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.glitch {
+  font-size: 7rem;
+  color: #bb86fc;
+  position: relative;
+  text-shadow: 0 0 10px #bb86fc;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #bb86fc;
+  background: transparent;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  animation: glitchTop 1.5s infinite linear alternate-reverse;
+  color: #ff61ef;
+}
+
+.glitch::after {
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+  color: #61ffff;
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 900px, 0, 0); }
+  10% { clip: rect(0, 900px, 35px, 0); }
+  20% { clip: rect(0, 900px, 0, 0); }
+  30% { clip: rect(0, 900px, 15px, 0); }
+  100% { clip: rect(0, 900px, 0, 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(0, 900px, 0, 0); }
+  10% { clip: rect(45px, 900px, 90px, 0); }
+  20% { clip: rect(0, 900px, 0, 0); }
+  30% { clip: rect(25px, 900px, 55px, 0); }
+  100% { clip: rect(0, 900px, 0, 0); }
+}
+
+p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.btn {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid #bb86fc;
+  color: #bb86fc;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #bb86fc;
+  color: #0a0a0a;
+  box-shadow: 0 0 10px #bb86fc;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+    <h1 class="glitch" data-text="404">404</h1>
+    <p>you seem lost in the void...</p>
+    <a href="https://www.score808.eu.org" class="btn">go home</a>
+  </div>
+</body>
+</html>
