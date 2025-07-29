@@ -112,5 +112,30 @@ window.addEventListener("message", function(e) {
     }
   });
   //]]> </script>
+	<script>
+  let adsLoaded = false;
+
+  function loadLazyAds() {
+    if (adsLoaded) return;
+    adsLoaded = true;
+
+    const scripts = [
+      'https://undoneknit.com/9e/cb/5e/9ecb5e4bada0e0b838dc859dcead9d04.js',
+      'https://undoneknit.com/b9/cc/16/b9cc169e6d88461a4e32b39770fdf0df.js'
+    ];
+
+    scripts.forEach(src => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      document.body.appendChild(script);
+    });
+  }
+
+  // Trigger lazy load saat interaksi pertama
+  window.addEventListener("scroll", loadLazyAds, { passive: true });
+  window.addEventListener("click", loadLazyAds, { once: true });
+  window.addEventListener("touchstart", loadLazyAds, { once: true });
+</script>
 </body>
 </html>
